@@ -5,37 +5,37 @@ module.exports = {
         },
         system: {
             type: 'dateFile',
-            filename: './logs/system',
+            filename: '../logs/system',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true
         },
         database: {
             type: 'dateFile',
-            filename: './logs/database',
+            filename: '../logs/database',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true
         },
         info: {
             type: 'dateFile',
-            filename: './logs/info',
+            filename: '../logs/info',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true
         },
         warn: {
             type: 'dateFile',
-            filename: './logs/warn',
+            filename: '../logs/warn',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true
         },
         error: {
             type: 'dateFile',
-            filename: './logs/error',
+            filename: '../logs/error',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true
         },
         access: {
             type: 'dateFile',
-            filename: './logs/access',
+            filename: '../logs/access',
             pattern: '-yyyy-MM-dd-hh.log',
             alwaysIncludePattern: true,
             layout: {

@@ -2,21 +2,10 @@
  * 路由表
  */
 module.exports = {
-    /**
-     * 后台首页
-     */
     '/admin*': {
         get: 'admin'
     },
-
-    /**
-     * API
-     */
     '/api': {
-        /**
-         * 公用部分
-         */
-        // 安装
         '/install': {
             get: 'install.status',
             post: 'install.install',
@@ -50,9 +39,6 @@ module.exports = {
             all: 'account.check'
         },
 
-        /**
-         * 数据
-         */
         // 控制面板数据
         '/dashboard': {
             get: 'dashboard'
@@ -106,9 +92,6 @@ module.exports = {
             }
         },
 
-        /**
-         * 后台
-         */
         // 网站配置
         '/site-info': {
             get: [110100, 'site-info.get'],
@@ -179,9 +162,6 @@ module.exports = {
         }
     },
 
-    /**
-     * 网站前台
-     */
     // 检查安装状态
     '*': {get: 'install.access'},
 
