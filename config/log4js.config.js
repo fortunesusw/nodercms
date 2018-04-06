@@ -1,39 +1,91 @@
 module.exports = {
-  appenders: [
-    {
-      type: 'console'
+    appenders: {
+        console: {
+            type: 'console'
+        },
+        system: {
+            type: 'dateFile',
+            filename: './logs/system',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true
+        },
+        database: {
+            type: 'dateFile',
+            filename: './logs/database',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true
+        },
+        info: {
+            type: 'dateFile',
+            filename: './logs/info',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true
+        },
+        warn: {
+            type: 'dateFile',
+            filename: './logs/warn',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true
+        },
+        error: {
+            type: 'dateFile',
+            filename: './logs/error',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true
+        },
+        access: {
+            type: 'dateFile',
+            filename: './logs/access',
+            pattern: '-yyyy-MM-dd-hh.log',
+            alwaysIncludePattern: true,
+            layout: {
+                type: 'pattern',
+                pattern: '%d %p %h %m'
+            }
+        }
     },
-    {
-      type: 'dateFile',
-      category: 'access',
-      filename: 'logs/access/access',
-      pattern: '-dd--hh.log',
-      alwaysIncludePattern: true
-    },
-    {
-      type: 'dateFile',
-      category: 'system',
-      filename: 'logs/system/system',
-      pattern: '-dd.log',
-      alwaysIncludePattern: true
-    },
-    {
-      type: 'dateFile',
-      category: 'database',
-      filename: 'logs/database/database',
-      pattern: '-dd.log',
-      alwaysIncludePattern: true
-    },
-    {
-      type: 'logLevelFilter',
-      level: 'ERROR',
-      appender: {
-        type: 'dateFile',
-        filename: 'logs/errors/error',
-        pattern: '-MM-dd.log',
-        alwaysIncludePattern: true
-      }
+    categories: {
+        default: {
+            appenders: [
+                'console'
+            ],
+            level: 'debug'
+        },
+        info: {
+            appenders: [
+                'console', 'info'
+            ],
+            level: 'info'
+        },
+        warn: {
+            appenders: [
+                'console', 'warn'
+            ],
+            level: 'warn'
+        },
+        error: {
+            appenders: [
+                'console', 'error'
+            ],
+            level: 'error'
+        },
+        access: {
+            appenders: [
+                'access'
+            ],
+            level: 'info'
+        },
+        database: {
+            appenders: [
+                'console', 'database'
+            ],
+            level: 'info'
+        },
+        system: {
+            appenders: [
+                'console', 'system'
+            ],
+            level: 'info'
+        }
     }
-  ],
-  replaceConsole: true
 };

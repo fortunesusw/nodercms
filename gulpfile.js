@@ -1,7 +1,5 @@
 var gulp = require('gulp');
 var gutil = require( 'gulp-util' );
-// var filter = require('gulp-filter');
-//var changed = require('gulp-changed');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
